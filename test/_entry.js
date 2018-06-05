@@ -1,0 +1,1 @@
+require("../lib/_ceri-config.js")

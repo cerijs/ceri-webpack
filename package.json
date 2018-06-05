@@ -1,0 +1,56 @@
+{
+  "name": "ceri-webpack",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cerijs",
+  "author": {
+    "name": "Paul Pflugradt",
+    "email": "paul.pflugradt@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cerijs/ceri-webpack"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "lib/ceri-webpack.js",
+  "web": "lib/_ceri-config.js",
+  "files": [
+    "lib/*.js"
+  ],
+  "dependencies": {
+    "document-register-element": "^1.9.0",
+    "fs-extra": "^6.0.1",
+    "read-conf": "^0.4.4"
+  },
+  "devDependencies": {
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.3.1",
+    "css-loader": "^0.28.11",
+    "memory-fs": "^0.4.1",
+    "script-runner": "^0.1.7",
+    "snapy": "^0.1.3",
+    "snapy-webpack": "^0.1.0",
+    "style-loader": "^0.21.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.10.2"
+  },
+  "keywords": [
+    "ceri",
+    "webpack"
+  ],
+  "readmeFilename": "README.md",
+  "scripts": {
+    "build": "coffee --bare --no-header --compile --output lib/ src/*.coffee",
+    "dev": "npm run build && ./cli.js",
+    "doc": "toDoc",
+    "test": "snapy",
+    "watch": "snapy --watch",
+    "preversion": "#npm run test",
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags && npm publish"
+  }
+}
