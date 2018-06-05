@@ -45,6 +45,17 @@ module.exports = {
 }
 ```
 
+## In your webpack entry file 
+```js
+// with polyfill
+require("ceri-webpack").then(function(){
+  // everything is ready
+})
+// without polyfill
+require("ceri-webpack")
+// everything is ready
+```
+
 ## License
 Copyright (c) 2017 Paul Pflugradt
 Licensed under the MIT license.
